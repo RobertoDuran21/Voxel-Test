@@ -241,7 +241,8 @@ void MFC(int button, int state, int x, int y)
       //Break Blocks if player left clicks on a block.
       if(BBX > 0 && BBX < CW && BBY > 0 && BBY < CH && BBZ > 0 && BBZ << CD && DB == 1)
       {
-         Blocks[BBX][BBY][BBZ] = 0;
+         DBPB();
+		 Blocks[BBX][BBY][BBZ] = 0;
          //BreakBlock = 1;
       }
    }
@@ -251,7 +252,8 @@ void MFC(int button, int state, int x, int y)
       //Place Block if player right clicks on a block.
       if(BBX > 0 && BBX < CW && BBY > 0 && BBY < CH && BBZ > 0 && BBZ << CD && DBIZ == 1)
       {
-         Blocks[PBX][PBY][PBZ] = 1;
+         DBPB();
+		 Blocks[PBX][PBY][PBZ] = 1;
          //PlaceBlock = 1;
       }
    }
@@ -541,7 +543,7 @@ void MM(int x, int y)
    XR += fy;
    YR += fx;
    //RayXr and RayYr is the rotation for the raycast, it has to be inverted like OpenGls rotations normally. 
-   RayXr -= (fy + 90);
+   RayXr -= fy;
    RayYr -= fx;
 }
 
@@ -549,7 +551,7 @@ int main(int argc, char **argv)
 {
    glutInit(&argc, argv);
    glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
-   glutInitWindowSize(640, 480);
+   glutInitWindowSize(600, 400);
    glutCreateWindow("Voxel Test");
    MakeFloor();   //Creates the floor for now
    glutDisplayFunc(display);
