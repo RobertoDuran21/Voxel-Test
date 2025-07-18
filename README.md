@@ -7,7 +7,7 @@ Download the freeglut archive file from this link click on freeglut for MinGW to
 
 Download and extract freeglut-MinGW-3.0.0-1 archive to get into the freeglut folder.
 
-1. Enter the freeglut folder and copy the files from freeglut/include/GL/
+Enter the freeglut folder and copy the files from freeglut/include/GL/
 File 1 freeglut.h
 File 2 freeglut_ext.h
 File 3 freeglut_std.h
